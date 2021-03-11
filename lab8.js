@@ -1,4 +1,4 @@
-const assert = require("assert");
+const assertEquals = require("./assert-helper");
 
 // questions from: https://www.codewars.com/kata/functional-addition
 // 1. Create a function add(n)
@@ -19,5 +19,5 @@ function add() {
 const addOneTo = add(1);
 const addThreeTo = add(3);
 
-assert(addOneTo(3) === 4, "1 + 3 = 4");
-assert(addThreeTo(3) === 6, "3 + 3 = 6");
+assertEquals(addOneTo(3), 4);
+assertEquals(addThreeTo(3), 6);

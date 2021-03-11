@@ -1,4 +1,4 @@
-const assert = require("assert");
+const assertEquals = require("./assert-helper");
 
 function says(message1, message2) {
   this.name = this.name || "John";
@@ -7,18 +7,16 @@ function says(message1, message2) {
 
 // using call get the assertion to pass
 // object
-assert(
-  says.call({ name: "Peter" }, "hello", "welcome") ===
-    "Peter says hello and welcome",
-  "true"
+assertEquals(
+  says.call({ name: "Peter" }, "hello", "welcome"),
+  "Peter says hello and welcome"
 );
 
 // using apply get the assertion to pass
 // object, array
-assert(
-  says.apply({ name: "Peter" }, ["hello", "welcome"]) ===
-    "Peter says hello and welcome",
-  "true"
+assertEquals(
+  says.apply({ name: "Peter" }, ["hello", "welcome"]),
+  "Peter says hello and welcome"
 );
 
 const iceCreamMachine = {
@@ -41,7 +39,7 @@ function IceCream(flavour) {
 // 1.2 Call `make` method on iceCreamMachine with chocolateIceCream context, using `bind`
 // const makeChocolateIceCream = ...
 
-assert(makeChocolateIceCream() === "chocolate", "should return chocolate");
+assertEquals(makeChocolateIceCream(), "chocolate");
 
 // 2.1 Create a vanilla flavoured IceCream
 // const vanillaIceCream = ...
@@ -50,7 +48,4 @@ const vanillaIceCream = new IceCream("vanilla");
 // 2.2 Call `make` method on iceCreamMachine with vanillaIceCream context AND "nuts" topping, using `call` or `apply`
 // const makeVanillaIceCream = ...
 
-assert(
-  makeVanillaIceCream === "vanilla nuts",
-  "should return vanilla with nuts"
-);
+assertEquals(makeVanillaIceCream, "vanilla nuts");

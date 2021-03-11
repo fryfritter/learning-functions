@@ -1,4 +1,5 @@
-const assert = require("assert");
+const assertEquals = require("./assert-helper");
+
 /**
  * from Wiki:
  * Fibonacci numbers,
@@ -19,11 +20,11 @@ function fib() {
   // TODO: your code here
 }
 
-assert(fib(0) === 0, "fib0");
-assert(fib(1) === 1, "fib1");
-assert(fib(2) === 1, "fib2");
-assert(fib(3) === 2, "fib3");
-assert(fib(4) === 3, "fib4");
-assert(fib(5) === 5, "fib5");
-assert(fib(6) === 8, "fib6");
-assert(fib(39) === 63245986, "fib39");
+assertEquals(fib(0), 0);
+assertEquals(fib(1), 1);
+assertEquals(fib(2), 1);
+assertEquals(fib(3), 2);
+assertEquals(fib(4), 3);
+assertEquals(fib(5), 5);
+assertEquals(fib(6), 8);
+assertEquals(fib(39), 63245986);

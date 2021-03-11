@@ -1,4 +1,4 @@
-const assert = require("assert");
+const assertEquals = require("./assert-helper");
 // 1. use arrow functions to create 4 methods:
 // add, subtract, multiply, divide
 
@@ -6,7 +6,7 @@ const add = (a, b) => {
   return a + b;
 };
 
-assert(add(1, 2) === 3, "should return the added value");
-assert(subtract(1, 2) === -1, "should return the subtracted value");
-assert(multiply(1, 2) === 2, "should return the multiplied value");
-assert(divide(1, 2) === 0.5, "should return the divided value");
+assertEquals(add(1, 2), 3);
+assertEquals(subtract(1, 2), -1);
+assertEquals(multiply(1, 2), 2);
+assertEquals(divide(1, 2), 0.5);
